@@ -6,18 +6,20 @@ scalacOptions ++= Seq("-deprecation", "-feature")
 
 sbtPlugin := true
 
-ScriptedPlugin.scriptedSettings
+//crossSbtVersions := Vector("0.13.15", "0.13.16-M1", "1.0.0-M6")
 
-scriptedLaunchOpts ++= Seq(
-  "-Xmx1024M",
-  "-Dplugin.version=" + version.value,
-  "-Dscripted=true")
+//ScriptedPlugin.scriptedSettings
+//
+//scriptedLaunchOpts ++= Seq(
+//  "-Xmx1024M",
+//  "-Dplugin.version=" + version.value,
+//  "-Dscripted=true")
 
-scriptedBufferLog := false
+//scriptedBufferLog := false
 
 fork := true
 
-coverageEnabled := false
+//coverageEnabled := false
 
 licenses := Seq("Apache-2.0" -> url("https://www.apache.org/licenses/LICENSE-2.0.html"))
 
@@ -37,14 +39,14 @@ pomExtra in Global := {
   </developers>
 }
 
-sonatypeProfileName := "io.verizon"
+//sonatypeProfileName := "io.verizon"
 
 pomPostProcess := { identity }
 
-addSbtPlugin("com.github.gseitz" % "sbt-release"   % "1.0.4")
+addSbtPlugin("com.github.gseitz" % "sbt-release"   % "1.0.6-SNAPSHOT")
 addSbtPlugin("com.timushev.sbt"  % "sbt-updates"   % "0.3.1")
 addSbtPlugin("com.eed3si9n"      % "sbt-buildinfo" % "0.7.0")
-addSbtPlugin("org.scoverage"     % "sbt-scoverage" % "1.5.0")
+//addSbtPlugin("org.scoverage"     % "sbt-scoverage" % "1.5.0")
 addSbtPlugin("org.xerial.sbt"    % "sbt-sonatype"  % "2.0")
 addSbtPlugin("com.jsuereth"      % "sbt-pgp"       % "1.1.0-M1")
 
